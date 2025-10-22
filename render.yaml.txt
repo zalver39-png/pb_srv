@@ -1,0 +1,15 @@
+services:
+  - type: web
+    name: pocketbase-server
+    env: docker
+    plan: free
+    autoDeploy: true
+    region: frankfurt
+    branch: main
+    buildCommand: ""
+    startCommand: "./pocketbase serve --http=0.0.0.0:10000"
+    envVars:
+      - key: POCKETBASE_ADMIN_EMAIL
+        value: admin@example.com
+      - key: POCKETBASE_ADMIN_PASSWORD
+        value: 12345678
